@@ -3,6 +3,7 @@ import VoicePopUp from '../components//VoicePopUp';
 import voicebg from "../assets/header.jpg";
 import MultiCardCarousel from '../components/MultiCardCarousel';
 import { IoIosNotificationsOutline } from 'react-icons/io';
+import WeatherMultiCard from '../components/WeatherMultiCard';
 
 const VoiceChoice = () => {
   return (
@@ -24,6 +25,9 @@ const VoiceChoice = () => {
     </Box>
     <Box mt={3} h={300}>
         <MultiCardCarousel />
+      </Box>
+      <Box mt={3} h={300}>
+        <WeatherMultiCard/>
       </Box>
     </Box>
   );

@@ -21,7 +21,7 @@ const VoicePopUp = () => {
           </ModalHeader>
           <ModalCloseButton />
           <ModalBody pb={10}>
-            <Box textAlign="center" mb={7}>Okay
+            <Box textAlign="center" mb={7}>
               <Text className="inknut-antiqua-semibold" fontSize={28} mb={2}>Voice your choice</Text>
               <Text className="inknut-antiqua-light" fontSize={15}>Choose and make it the next trend!</Text>
             </Box>
