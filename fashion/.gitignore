@@ -1,0 +1,8 @@
+venv
+uploads
+images
+embeddings.pkl
+filenames.pkl
+Untitled.ipynb
+clothes.ipynb
+.ipynb_checkpoints
