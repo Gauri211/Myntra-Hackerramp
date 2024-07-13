@@ -3,6 +3,7 @@ import './App.css';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import VoiceChoice from './pages/VoiceChoice';
 import VirtualTryOn from './pages/VirtualTryOn';
+import Weather from './pages/Weather';
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
         <Routes>
           <Route path='/' element={<VoiceChoice />} />
           <Route path='/tryon' element={<VirtualTryOn />} />
+          <Route path='/weather' element={<Weather />} />
         </Routes>
       </BrowserRouter>
     </ChakraProvider>
