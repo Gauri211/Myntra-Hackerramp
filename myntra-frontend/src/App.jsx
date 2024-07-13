@@ -1,8 +1,9 @@
-import { Box, ChakraProvider } from '@chakra-ui/react';
+import { ChakraProvider, Image } from '@chakra-ui/react';
 import './App.css';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import VoiceChoice from './pages/VoiceChoice';
 import VirtualTryOn from './pages/VirtualTryOn';
+import bottomImage from "./assets/bottom-bar.jpg"
 
 function App() {
   return (
@@ -13,6 +14,13 @@ function App() {
           <Route path='/tryon' element={<VirtualTryOn />} />
         </Routes>
       </BrowserRouter>
+      <Image
+        src={bottomImage}
+        position="fixed"
+        bottom="0"
+        width="100%"
+        zIndex="9999" // Ensure the image is on top of other content
+      />
     </ChakraProvider>
   );
 }

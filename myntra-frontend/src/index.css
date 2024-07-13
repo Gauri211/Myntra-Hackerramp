@@ -64,7 +64,7 @@ code {
 }
 
 .background {
-  background-image: url('./assets/voice-bg.jpg');
+  background-image: url('./assets/header.jpg');
   background-size: cover;
   /* background-position: center; */
   background-repeat: no-repeat;
@@ -99,3 +99,7 @@ code {
   font-size: 20px;
 }
 
+.product-card-wrapper {
+  padding: 0 10px; /* Adjust the horizontal padding as needed */
+  box-sizing: border-box;
+}
