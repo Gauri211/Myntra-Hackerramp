@@ -7,6 +7,9 @@ const WeatherCard = () => {
 
   return (
     <Card maxW='sm' h={280} borderRadius={0}>
+        <CardHeader>
+    <Heading size='md'>Stay Chic,No Matter Forecast!!!</Heading>
+  </CardHeader>
         <CardBody>
             <Image
             src={Dresses}
@@ -14,7 +17,7 @@ const WeatherCard = () => {
             onClick={() => navigate("/tryon")}
             />
             <Stack mt='4' spacing='0'>
-            <Heading size='sm'>Dressberry</Heading>
+            <Heading size='sm'>DrassBerry</Heading>
             <Text>
                 Dresses
             </Text>
