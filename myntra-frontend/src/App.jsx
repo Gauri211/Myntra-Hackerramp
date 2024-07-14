@@ -1,4 +1,4 @@
-import { ChakraProvider, Image } from '@chakra-ui/react';
+import { Box, ChakraProvider, Image } from '@chakra-ui/react';
 import './App.css';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Home from './pages/Home';
@@ -13,18 +13,21 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path='/' element={<Home />} />
-          <Route path='/tryon' element={<VirtualTryOn />} />
+          <Route path='/try-on' element={<VirtualTryOn />} />
           <Route path='/product' element={<ProductPage />} />
           <Route path='/weather' element={<Weather />} />
         </Routes>
       </BrowserRouter>
+      <Box pt={"40px"}>
       <Image
         src={bottomImage}
         position="fixed"
         bottom="0"
         width="100%"
         zIndex="9999" // Ensure the image is on top of other content
+        mt={50}
       />
+      </Box>
     </ChakraProvider>
   );
 }

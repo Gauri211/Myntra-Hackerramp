@@ -1,4 +1,4 @@
-import { Box, useDisclosure } from '@chakra-ui/react';
+import { Box, Heading, useDisclosure } from '@chakra-ui/react';
 // import VoicePopUp from '../components//VoicePopUp';
 import voicebg from "../assets/header.jpg";
 import MultiCardCarousel from '../components/MultiCardCarousel';
@@ -61,9 +61,10 @@ const Home = () => {
       </Modal>
     </Box>
     <Box mt={3} h={300}>
+      <Text mb={3} ml={3} className='inknut-antiqua-medium'>Cool Picks for you</Text>
         <MultiCardCarousel />
       </Box>
-      <Box mt={3} h={300}>
+      <Box mt={10} h={300}>
         <WeatherMultiCard/>
       </Box>
     </Box>

@@ -29,11 +29,12 @@ const VirtualTryOn = () => {
           <ModelViewer title={title}/>
         </Box>
         <Box
-        mt={2}
-        bgGradient="linear(to-r, #e0c3fc, #8ec5fc)" // Light purple to pink gradient
+        // mt={2}
+        // bgGradient="linear(to-r, #e0c3fc, #8ec5fc)" // Light purple to pink gradient
         p={4}
         borderRadius="md"
       >
+        <Heading size="sm" mb={3}>More like this</Heading>
         <MultiCardCarousel />
       </Box>
     </Box>

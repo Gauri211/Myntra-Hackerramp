@@ -22,9 +22,9 @@ const Model = ({ isMobile, title }) => {
         shadow-mapSize={2048} // Increased shadow map size for better resolution
       />
       <primitive
-        object={title === "manasvi" ? computer.scene : model.scene}
-        scale={isMobile ? 1.5 : 1.5}
-        position={isMobile ? [0, 0.3, 0] : [0, -1.5, 0]}
+        object={title === "White Top" ? computer.scene : model.scene}
+        scale={isMobile ? 2 : 1.5}
+        position={isMobile ? [0, 0, 0] : [0, -1.5, 0]}
         rotation={[0, 0, 0]} // Explicitly setting rotation to zero
       />
     </mesh>
