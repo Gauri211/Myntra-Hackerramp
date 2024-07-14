@@ -5,6 +5,7 @@ import MultiCardCarousel from '../components/MultiCardCarousel';
 import { IoIosNotificationsOutline } from 'react-icons/io';
 import { Button, Image, Modal, ModalBody, ModalCloseButton, ModalContent, ModalHeader, ModalOverlay, Tab, TabList, Tabs, Text } from "@chakra-ui/react"
 import top from '../assets/black-top.jpg'
+import WeatherMultiCard from '../components/WeatherMultiCard';
 
 const Home = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -61,6 +62,9 @@ const Home = () => {
     </Box>
     <Box mt={3} h={300}>
         <MultiCardCarousel />
+      </Box>
+      <Box mt={3} h={300}>
+        <WeatherMultiCard/>
       </Box>
     </Box>
   );

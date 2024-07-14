@@ -17,7 +17,7 @@ const ProductCard = ({ title, cardimage, content, price }) => {
         <Stack mt='1' spacing='0'>
           <Heading size='sm'>{title}</Heading>
           <Text>Shirts</Text>
-          <Text color='blue.600' fontSize='xl'>$450</Text>
+          <Text color='red.600' fontSize='xl'>$450</Text>
         </Stack>
       </CardBody>
     </Card>
