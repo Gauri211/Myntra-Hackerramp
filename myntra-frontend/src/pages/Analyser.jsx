@@ -1,22 +1,19 @@
 import React, { useState } from 'react';
+import { IoIosNotificationsOutline } from 'react-icons/io';
 import { Box, Button, Flex, Heading, Image, Input, ChakraProvider } from '@chakra-ui/react';
 import { useDisclosure, Modal, ModalOverlay, ModalContent, ModalHeader, ModalCloseButton, ModalBody, ModalFooter } from '@chakra-ui/react';
 import headerImage from '../assets/Header.png'; // Replace with your actual image path
 import Analyser from '../assets/Analyser.png';
 import ColorPalette from '../components/ColorPalette';
 import SeasonImage from '../components/Season';
-<<<<<<< HEAD
-=======
-import { IoIosNotificationsOutline } from 'react-icons/io';
 import voicebg from "../assets/header.jpg";
-import { useLocation, useNavigate } from "react-router-dom";
 import colorwheel from "../assets/color-wheel.png"
->>>>>>> 3b9595ab362ca70f4efc19bbe35a39ec110c0b23
 
 const AnalyserPage = () => {
   const currentSeason = 'summer';
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [image, setImage] = useState(null);
+  const [showAnalyser, setShowAnalyser] = useState(true); // State to manage visibility of Analyser image
 
   const handleImageChange = (e) => {
     const file = e.target.files[0];
@@ -24,6 +21,7 @@ const AnalyserPage = () => {
       const reader = new FileReader();
       reader.onloadend = () => {
         setImage(reader.result);
+        setShowAnalyser(false); // Hide Analyser image after setting the image
         onClose(); // Close the modal after setting the image
       };
       reader.readAsDataURL(file);
@@ -39,9 +37,6 @@ const AnalyserPage = () => {
   return (
     <Box>
       {/* Header Image */}
-<<<<<<< HEAD
-      <Image src={Analyser} alt="Selected Image" w="100%" h="auto" />
-=======
       <Box
         w="100%"
         h="6.5vh"
@@ -59,8 +54,7 @@ const AnalyserPage = () => {
           <Image src={colorwheel} h={12} w={12} bgColor={"white"} />
         </Box>
       </Box>
-
->>>>>>> 3b9595ab362ca70f4efc19bbe35a39ec110c0b23
+     
       {/* Content Box */}
       <Box p={5}>
         <Flex justifyContent="space-between" alignItems="center" mb={3}>
@@ -79,20 +73,31 @@ const AnalyserPage = () => {
           </Box>
         </Flex>
 
+        {/* Analyser Image Display Section */}
+        {showAnalyser && (
+          <Box mb={5}>
+            <Image src={Analyser} alt="Analyser Image" w="100%" h="auto" />
+          </Box>
+        )}
+
         {/* Selected Image Display Section */}
-        {image && (
+        {image && !showAnalyser && (
           <Box mb={5}>
             <Image src={image} alt="Selected Image" w="100%" h="auto" />
           </Box>
         )}
 
         {/* SeasonImage and ColorPalette */}
-        <Box>
-          <SeasonImage season={currentSeason} />
-        </Box>
-        <Box mt={5}>
-          <ColorPalette />
-        </Box>
+        {!showAnalyser && (
+          <Box>
+            <SeasonImage season={currentSeason} />
+          </Box>
+        )}
+        {!showAnalyser && (
+          <Box mt={5}>
+            <ColorPalette />
+          </Box>
+        )}
 
         {/* Modal for Try On */}
         <Modal isOpen={isOpen} onClose={onClose}>
