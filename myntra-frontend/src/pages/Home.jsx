@@ -6,7 +6,7 @@ import voicebg from "../assets/header.jpg";
 import MultiCardCarousel from '../components/MultiCardCarousel';
 import WeatherMultiCard from '../components/WeatherMultiCard';
 import VotingModal from '../components/VotingModal';
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import ChoiceTrendCarousel from "../components/ChoiceTrendCarousel"
 import colorwheel from "../assets/color-wheel.png"
 
@@ -16,7 +16,8 @@ const Home = () => {
   const { winningImage } = location.state || {};
   const [trend, setTrend] = useState([]);
   const [newRec, setNewRec] = useState(false);
-
+  const navigate = useNavigate();
+  
   useEffect(() => {
     if (winningImage) {
       fetchRecommendations(winningImage);
@@ -61,7 +62,7 @@ const Home = () => {
           <IoIosNotificationsOutline onClick={onOpen} />
         </Box>
         <Box position={"absolute"} top={0.1} right={"50px"} fontSize={"30px"}>
-          <Image src={colorwheel} h={12} w={12} bgColor={"white"}/>
+          <Image src={colorwheel} h={12} w={12} bgColor={"white"} onClick={() => navigate("/analyser")}/>
         </Box>
         <VotingModal isOpen={isOpen} onClose={onClose} fetchRecommendations={fetchRecommendations} />
       </Box>

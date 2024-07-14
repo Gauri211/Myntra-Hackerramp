@@ -5,6 +5,11 @@ import headerImage from '../assets/Header.png'; // Replace with your actual imag
 import MidImage from '../assets/Analyser.png'
 import ColorPalette from '../components/ColorPalette';
 import SeasonImage from '../components/Season';
+import { IoIosNotificationsOutline } from 'react-icons/io';
+import voicebg from "../assets/header.jpg";
+import { useLocation, useNavigate } from "react-router-dom";
+import colorwheel from "../assets/color-wheel.png"
+
 const AnalyserPage = () => {
   const currentSeason = 'summer';
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -30,7 +35,23 @@ const AnalyserPage = () => {
   return (
     <Box>
       {/* Header Image */}
-      <Image src={headerImage} alt="Header Image" w="100%" h="100%" />
+      <Box
+        w="100%"
+        h="6.5vh"
+        bgImage={voicebg}
+        bgSize="cover"
+        bgPosition="top"
+        display="flex"
+        justifyContent="center"
+        alignItems="center"
+      >
+        <Box position={"absolute"} top={2.5} right={"107px"} fontSize={"30px"} bgColor={"white"}>
+          <IoIosNotificationsOutline />
+        </Box>
+        <Box position={"absolute"} top={0.1} right={"50px"} fontSize={"30px"}>
+          <Image src={colorwheel} h={12} w={12} bgColor={"white"} />
+        </Box>
+      </Box>
 
       {/* Content Box */}
       <Box p={5}>
