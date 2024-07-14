@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
-import { Box, Button, Flex, Heading, Image, Input } from '@chakra-ui/react';
+import { Box, Button, Flex, Heading, Image, Input ,ChakraProvider} from '@chakra-ui/react';
 import { useDisclosure, Modal, ModalOverlay, ModalContent, ModalHeader, ModalCloseButton, ModalBody, ModalFooter } from '@chakra-ui/react';
 import headerImage from '../assets/Header.png'; // Replace with your actual image path
 import MidImage from '../assets/Analyser.png'
-
+import ColorPalette from '../components/ColorPalette';
+import SeasonImage from '../components/Season';
 const AnalyserPage = () => {
+  const currentSeason = 'summer';
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [image, setImage] = useState(null);
 
@@ -28,7 +30,7 @@ const AnalyserPage = () => {
   return (
     <Box>
       {/* Header Image */}
-      <Image src={headerImage} alt="Header Image" w="100%" h="100%"/>
+      <Image src={headerImage} alt="Header Image" w="100%" h="100%" />
 
       {/* Content Box */}
       <Box p={5}>
@@ -48,8 +50,14 @@ const AnalyserPage = () => {
           </Box>
         </Flex>
         <Box>
-          {/* Add more content here */}
-          <Image src={MidImage} alt="Header Image" w="100%" h="100%" />
+
+        </Box>
+        <Box >
+          {/* Add more content here  <Image src={MidImage} alt="Header Image" w="100%" h="100%" />*/}
+            <SeasonImage season={currentSeason} />
+            </Box>
+            <Box marginTop={5}>
+          <ColorPalette />
         </Box>
         {/* Modal for Try On */}
         <Modal isOpen={isOpen} onClose={onClose}>
@@ -63,7 +71,7 @@ const AnalyserPage = () => {
             </ModalBody>
             <ModalFooter>
               <Button colorScheme='pink' onClick={handleTry}>
-                Try
+                Okay
               </Button>
             </ModalFooter>
           </ModalContent>
