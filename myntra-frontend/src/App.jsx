@@ -3,7 +3,7 @@ import './App.css';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Home from './pages/Home';
 import VirtualTryOn from './pages/VirtualTryOn';
-import Weather from './pages/Weather';
+import Analyser from './pages/Analyser';
 import bottomImage from "./assets/bottom-bar.jpg"
 import ProductPage from './pages/ProductPage';
 
@@ -15,7 +15,7 @@ function App() {
           <Route path='/' element={<Home />} />
           <Route path='/try-on' element={<VirtualTryOn />} />
           <Route path='/product' element={<ProductPage />} />
-          <Route path='/weather' element={<Weather />} />
+          <Route path='/analyser' element={<Analyser />} />
         </Routes>
       </BrowserRouter>
       <Box pt={"40px"}>
