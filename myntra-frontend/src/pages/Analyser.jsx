@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
-import { Box, Button, Flex, Heading, Image, Input ,ChakraProvider} from '@chakra-ui/react';
+import { Box, Button, Flex, Heading, Image, Input, ChakraProvider } from '@chakra-ui/react';
 import { useDisclosure, Modal, ModalOverlay, ModalContent, ModalHeader, ModalCloseButton, ModalBody, ModalFooter } from '@chakra-ui/react';
 import headerImage from '../assets/Header.png'; // Replace with your actual image path
-import MidImage from '../assets/Analyser.png'
+import Analyser from '../assets/Analyser.png';
 import ColorPalette from '../components/ColorPalette';
 import SeasonImage from '../components/Season';
+
 const AnalyserPage = () => {
   const currentSeason = 'summer';
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -16,6 +17,7 @@ const AnalyserPage = () => {
       const reader = new FileReader();
       reader.onloadend = () => {
         setImage(reader.result);
+        onClose(); // Close the modal after setting the image
       };
       reader.readAsDataURL(file);
     }
@@ -30,8 +32,7 @@ const AnalyserPage = () => {
   return (
     <Box>
       {/* Header Image */}
-      <Image src={headerImage} alt="Header Image" w="100%" h="100%" />
-
+      <Image src={Analyser} alt="Selected Image" w="100%" h="auto" />
       {/* Content Box */}
       <Box p={5}>
         <Flex justifyContent="space-between" alignItems="center" mb={3}>
@@ -49,16 +50,22 @@ const AnalyserPage = () => {
             </Button>
           </Box>
         </Flex>
-        <Box>
 
+        {/* Selected Image Display Section */}
+        {image && (
+          <Box mb={5}>
+            <Image src={image} alt="Selected Image" w="100%" h="auto" />
+          </Box>
+        )}
+
+        {/* SeasonImage and ColorPalette */}
+        <Box>
+          <SeasonImage season={currentSeason} />
         </Box>
-        <Box >
-          {/* Add more content here  <Image src={MidImage} alt="Header Image" w="100%" h="100%" />*/}
-            <SeasonImage season={currentSeason} />
-            </Box>
-            <Box marginTop={5}>
+        <Box mt={5}>
           <ColorPalette />
         </Box>
+
         {/* Modal for Try On */}
         <Modal isOpen={isOpen} onClose={onClose}>
           <ModalOverlay />
@@ -67,7 +74,7 @@ const AnalyserPage = () => {
             <ModalCloseButton />
             <ModalBody>
               <Input type="file" accept="image/*" onChange={handleImageChange} />
-              {image && <Image src={image} alt="Selected" mt={4} />}
+              {/* {image && <Image src={image} alt="Selected" mt={4} />} */}
             </ModalBody>
             <ModalFooter>
               <Button colorScheme='pink' onClick={handleTry}>
