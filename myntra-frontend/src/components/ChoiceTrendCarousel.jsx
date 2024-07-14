@@ -1,21 +1,7 @@
-import React from 'react';
+/* eslint-disable react/prop-types */
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
-import ProductCard from './ProductCard';
-import { useNavigate } from 'react-router-dom';
-import whiteTop from "../assets/white-top.jpeg"
-import orangeTop from "../assets/orange-top.jpeg"
-import blackTop from "../assets/black-top.jpg"
 import { Box } from '@chakra-ui/react';
-
-const cards = [
-  { id: 1, title: 'White Top', content: 'Content of Card 1', cardimage: whiteTop },
-  { id: 2, title: 'Orange Top', content: 'Content of Card 2', cardimage: orangeTop},
-  { id: 3, title: 'Black Top', content: 'Content of Card 3', cardimage: blackTop },
-  { id: 4, title: 'Card 4', content: 'Content of Card 4', cardimage: whiteTop },
-  { id: 5, title: 'Card 5', content: 'Content of Card 5', cardimage: orangeTop },
-  // Add more cards as needed
-];
 
 const responsive = {
   superLargeDesktop: {

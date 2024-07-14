@@ -31,6 +31,7 @@ const Model = ({ isMobile, title }) => {
   );
 };
 
+// eslint-disable-next-line react/prop-types
 const ModelViewer = ({title}) => {
   const [isMobile, setIsMobile] = useState(false);
 
