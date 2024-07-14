@@ -5,32 +5,33 @@ import { OrbitControls, Preload, useGLTF } from '@react-three/drei';
 import CanvasLoader from './Loader';
 
 // eslint-disable-next-line react/prop-types
-const Model = ({ isMobile }) => {
-  const computer = useGLTF('/model.gltf'); // Adjust the path as needed
+const Model = ({ isMobile, title }) => {
+  const computer = useGLTF('/manasvi.gltf'); // Adjust the path as needed
+  const model = useGLTF("./model.gltf");
 
   return (
     <mesh>
-      <hemisphereLight intensity={0.3} groundColor={'black'} />
-      <pointLight intensity={1} />
+      <hemisphereLight intensity={1.8} />
+      <directionalLight position={[50, 20, 85]} intensity={1} />
       <spotLight
-        position={[-50, 50, 20]}
-        angle={0.15}
+        position={[-20, 20, 20]}
+        angle={0.10}
         penumbra={1}
         intensity={1}
         castShadow
         shadow-mapSize={2048} // Increased shadow map size for better resolution
       />
       <primitive
-        object={computer.scene}
-        scale={isMobile ? 2 : 1.5}
-        position={isMobile ? [0, 0, 0] : [0, -1.5, 0]}
+        object={title === "manasvi" ? computer.scene : model.scene}
+        scale={isMobile ? 1.5 : 1.5}
+        position={isMobile ? [0, 0.3, 0] : [0, -1.5, 0]}
         rotation={[0, 0, 0]} // Explicitly setting rotation to zero
       />
     </mesh>
   );
 };
 
-const ModelViewer = () => {
+const ModelViewer = ({title}) => {
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
@@ -59,9 +60,9 @@ const ModelViewer = () => {
         <OrbitControls
           enableZoom={true}
           maxPolarAngle={Math.PI / 2}
-          minPolarAngle={Math.PI / 2}
+          minPolarAngle={0}
         />
-        <Model isMobile={isMobile} />
+        <Model isMobile={isMobile} title={title}/>
       </Suspense>
       <Preload all />
     </Canvas>

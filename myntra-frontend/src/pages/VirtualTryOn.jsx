@@ -5,10 +5,12 @@ import { GrFavorite } from "react-icons/gr";
 import { HiOutlineShoppingBag } from "react-icons/hi2";
 import ModelViewer from "../components/ModelViewer";
 import MultiCardCarousel from "../components/MultiCardCarousel";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 
 const VirtualTryOn = () => {
   const navigate = useNavigate();
+  const location = useLocation();
+  const { title } = location.state || {};
 
   return (
     <Box>
@@ -24,7 +26,7 @@ const VirtualTryOn = () => {
             </HStack>
         </Flex>
         <Box h={450} bgColor={'black'}>
-          <ModelViewer />
+          <ModelViewer title={title}/>
         </Box>
         <Box
         mt={2}
