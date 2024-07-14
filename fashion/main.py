@@ -12,6 +12,8 @@ import os
 import re
 import pandas as pd
 from flask_cors import CORS
+import requests
+import time
 
 app = Flask(__name__)
 CORS(app, origin=["http://localhost:5173"])
@@ -31,6 +33,7 @@ model = tf.keras.Sequential([
 
 image_df = pd.read_csv("images.csv", sep=',')
 image_dict = dict(zip(image_df['filename'], image_df['link']))
+df = pd.read_csv('styles.csv', sep=',')
 
 def feature_extraction(img_path, model):
     img = image.load_img(img_path, target_size=(224, 224))
@@ -84,6 +87,43 @@ def final_output():
 
     return jsonify({"recommended_images": recommended_links})
     
+
+@app.route('/colorrec', methods=['POST'])
+def colorAnalysis():
+    # Make a request to the external API
+    response = requests.post('https://54q0p9sw-8000.inc1.devtunnels.ms/analyze', files=request.files)  # Replace with your actual URL
+    
+    time.sleep(5)
+    
+    if response.status_code != 200:
+        return jsonify({"error": "Failed to retrieve color data"}), 500
+    
+    # Extract the recc_list from the JSON response
+    color_data = response.json()  # Adjust based on the response structure
+    recc_list = color_data.get("Recc List", [])  # Adjust based on the actual JSON structure
+
+    # Clean the recc_list by removing the leading dash and space
+    cleaned_recc_list = [color.strip("- ").strip() for color in recc_list]
+    print(cleaned_recc_list)
+    # Filter styles based on the cleaned_recc_list
+    women_df = df[(df['gender'] == 'Women') & (df['baseColour'].isin(cleaned_recc_list))]
+    print(women_df)
+    num_random_ids = 5  # Adjust this number as needed
+    random_ids = women_df['id'].sample(n=num_random_ids).tolist()
+
+    # Add .jpg to each selected ID
+    random_ids_with_extension = [f"{str(id)}.jpg" for id in random_ids]
+
+    # Map the modified IDs to the filename column in the images dataset
+    mapped_images = image_df[image_df['filename'].isin(random_ids_with_extension)]
+
+    links = mapped_images['link'].tolist()
+
+    # Prepare the final response
+    color_data["Recc List"] = cleaned_recc_list
+    color_data["Links"] = links
+
+    return jsonify(color_data) # Return as JSON response
 
 if __name__ == '__main__':
     if not os.path.exists('uploads'):

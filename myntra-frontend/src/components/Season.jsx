@@ -8,19 +8,19 @@ import Ses4 from '../assets/Winter.png';
 const SeasonImage = ({ season }) => {
   let seasonImage;
 
-  if (season === 'spring') {
+  if (season === 'Spring') {
     seasonImage = (
       <Image src={Ses1} alt="Spring" style={{ width: '100%', height: 'auto', padding: '10px' }} />
     );
-  } else if (season === 'summer') {
+  } else if (season === 'Summer') {
     seasonImage = (
       <Image src={Ses2} alt="Summer" style={{ width: '100%', height: 'auto', padding: '10px' }} />
     );
-  } else if (season === 'autumn') {
+  } else if (season === 'Autumn') {
     seasonImage = (
       <Image src={Ses3} alt="Autumn" style={{ width: '100%', height: 'auto', padding: '10px' }} />
     );
-  } else if (season === 'winter') {
+  } else if (season === 'Winter') {
     seasonImage = (
       <Image src={Ses4} alt="Winter" style={{ width: '100%', height: 'auto', padding: '10px' }} />
     );

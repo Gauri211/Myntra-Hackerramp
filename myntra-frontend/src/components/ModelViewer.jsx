@@ -6,8 +6,25 @@ import CanvasLoader from './Loader';
 
 // eslint-disable-next-line react/prop-types
 const Model = ({ isMobile, title }) => {
-  const computer = useGLTF('/manasvi.gltf'); // Adjust the path as needed
-  const model = useGLTF("./model.gltf");
+
+  const getModel = (title) => {
+    switch (title) {
+      case "White Top":
+        return "whiteTop";
+      case "Black Top":
+        return "blackTop";
+      case "Orange Top":
+        return "orangeTop";
+      case "Peach Top":
+        return "peachTop";
+      default:
+        return "greyTop"; // Default model if title doesn't match
+    }
+  };
+
+  const selectedModel = getModel(title);
+
+  const computer = useGLTF(`/${selectedModel}.gltf`); // Adjust the path as needed
 
   return (
     <mesh>
@@ -22,7 +39,7 @@ const Model = ({ isMobile, title }) => {
         shadow-mapSize={2048} // Increased shadow map size for better resolution
       />
       <primitive
-        object={title === "White Top" ? computer.scene : model.scene}
+        object={computer.scene}
         scale={isMobile ? 2 : 1.5}
         position={isMobile ? [0, 0, 0] : [0, -1.5, 0]}
         rotation={[0, 0, 0]} // Explicitly setting rotation to zero

@@ -26,7 +26,7 @@ function App() {
         width="100%"
         zIndex="9999" // Ensure the image is on top of other content
         mt={50}
-      />
+      /> 
       </Box>
     </ChakraProvider>
   );

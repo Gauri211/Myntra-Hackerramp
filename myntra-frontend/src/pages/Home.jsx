@@ -17,7 +17,7 @@ const Home = () => {
   const [trend, setTrend] = useState([]);
   const [newRec, setNewRec] = useState(false);
   const navigate = useNavigate();
-  
+
   useEffect(() => {
     if (winningImage) {
       fetchRecommendations(winningImage);
@@ -75,13 +75,10 @@ const Home = () => {
         </>
       ) : null }
 
-        <Box mt={3} h={300}>
-          <Text mb={3} ml={3} className='inknut-antiqua-medium'>Cool Picks for you</Text>
+        <Box mt={3} h={400}>
+          <Text mb={3} ml={3} className='inknut-antiqua-semibold'>Cool Picks for you</Text>
           <MultiCardCarousel />
         </Box>
-      <Box mt={10} h={300}>
-        <WeatherMultiCard />
-      </Box>
     </Box>
   );
 };
