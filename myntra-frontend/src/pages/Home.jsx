@@ -1,23 +1,23 @@
 import { useState, useEffect } from 'react';
-import { Box, useDisclosure, Text, Spinner } from '@chakra-ui/react';
+import { Box, useDisclosure, Text, Image } from '@chakra-ui/react';
 import { IoIosNotificationsOutline } from 'react-icons/io';
 import axios from 'axios';
 import voicebg from "../assets/header.jpg";
 import MultiCardCarousel from '../components/MultiCardCarousel';
 import WeatherMultiCard from '../components/WeatherMultiCard';
 import VotingModal from '../components/VotingModal';
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import ChoiceTrendCarousel from "../components/ChoiceTrendCarousel"
+import colorwheel from "../assets/color-wheel.png"
 
 const Home = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
-  const [products, setProducts] = useState([]);
   const location = useLocation();
   const { winningImage } = location.state || {};
-  const [loading, setLoading] = useState(false);
   const [trend, setTrend] = useState([]);
   const [newRec, setNewRec] = useState(false);
-
+  const navigate = useNavigate();
+  
   useEffect(() => {
     if (winningImage) {
       fetchRecommendations(winningImage);
@@ -25,12 +25,10 @@ const Home = () => {
   }, [winningImage]);
 
   const fetchRecommendations = async (imagePath) => {
-    setLoading(true);
     try {
       const response = await fetch(imagePath);
       const blob = await response.blob();
       const file = new File([blob], 'winningImage.jpg', { type: blob.type });
-
       const formData = new FormData();
       formData.append('file', file);
 
@@ -44,13 +42,9 @@ const Home = () => {
       setNewRec(true);
     } catch (error) {
       console.error("Error fetching recommendations:", error);
-    } finally {
-      setLoading(false);
-    }
+    } 
   };
 
-  console.log(newRec);
-  console.log(trend);
 
   return (
     <Box bgGradient="linear(to-r, #e0c3fc, #8ec5fc)">
@@ -67,6 +61,9 @@ const Home = () => {
         <Box position={"absolute"} top={2.5} right={"107px"} fontSize={"30px"} bgColor={"white"}>
           <IoIosNotificationsOutline onClick={onOpen} />
         </Box>
+        <Box position={"absolute"} top={0.1} right={"50px"} fontSize={"30px"}>
+          <Image src={colorwheel} h={12} w={12} bgColor={"white"} onClick={() => navigate("/analyser")}/>
+        </Box>
         <VotingModal isOpen={isOpen} onClose={onClose} fetchRecommendations={fetchRecommendations} />
       </Box>
       {newRec ? (
@@ -80,7 +77,7 @@ const Home = () => {
 
         <Box mt={3} h={300}>
           <Text mb={3} ml={3} className='inknut-antiqua-medium'>Cool Picks for you</Text>
-          <MultiCardCarousel products={products} />
+          <MultiCardCarousel />
         </Box>
       <Box mt={10} h={300}>
         <WeatherMultiCard />

@@ -5,6 +5,13 @@ import headerImage from '../assets/Header.png'; // Replace with your actual imag
 import Analyser from '../assets/Analyser.png';
 import ColorPalette from '../components/ColorPalette';
 import SeasonImage from '../components/Season';
+<<<<<<< HEAD
+=======
+import { IoIosNotificationsOutline } from 'react-icons/io';
+import voicebg from "../assets/header.jpg";
+import { useLocation, useNavigate } from "react-router-dom";
+import colorwheel from "../assets/color-wheel.png"
+>>>>>>> 3b9595ab362ca70f4efc19bbe35a39ec110c0b23
 
 const AnalyserPage = () => {
   const currentSeason = 'summer';
@@ -32,7 +39,28 @@ const AnalyserPage = () => {
   return (
     <Box>
       {/* Header Image */}
+<<<<<<< HEAD
       <Image src={Analyser} alt="Selected Image" w="100%" h="auto" />
+=======
+      <Box
+        w="100%"
+        h="6.5vh"
+        bgImage={voicebg}
+        bgSize="cover"
+        bgPosition="top"
+        display="flex"
+        justifyContent="center"
+        alignItems="center"
+      >
+        <Box position={"absolute"} top={2.5} right={"107px"} fontSize={"30px"} bgColor={"white"}>
+          <IoIosNotificationsOutline />
+        </Box>
+        <Box position={"absolute"} top={0.1} right={"50px"} fontSize={"30px"}>
+          <Image src={colorwheel} h={12} w={12} bgColor={"white"} />
+        </Box>
+      </Box>
+
+>>>>>>> 3b9595ab362ca70f4efc19bbe35a39ec110c0b23
       {/* Content Box */}
       <Box p={5}>
         <Flex justifyContent="space-between" alignItems="center" mb={3}>
