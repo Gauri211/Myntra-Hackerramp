@@ -44,7 +44,7 @@ const AnalyserPage = () => {
           setSeason(season);
           setLinks(links);
           setLoading(false);
-          onClose();
+          onClose(); // Close the modal after processing
         } catch (error) {
           console.error('Error analyzing image:', error);
           setLoading(false);

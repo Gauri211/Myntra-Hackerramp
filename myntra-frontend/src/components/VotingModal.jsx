@@ -17,7 +17,7 @@ const VotingModal = ({ isOpen, onClose }) => {
 
   useEffect(() => {
     const fetchCounts = async () => {
-      const response = await axios.get('http://localhost:5000/counts');
+      const response = await axios.get('http://127.0.0.1:5001/counts');
       setCounts(response.data);
       setTotalVotes(response.data.A + response.data.B + response.data.C);
     };
@@ -26,8 +26,8 @@ const VotingModal = ({ isOpen, onClose }) => {
 
   const handleVote = async (option) => {
     try {
-      await axios.post('http://localhost:5000/vote', { option });
-      const response = await axios.get('http://localhost:5000/counts');
+      await axios.post('http://127.0.0.1:5001/vote', { option });
+      const response = await axios.get('http://127.0.0.1:5001/counts');
       setCounts(response.data);
       setTotalVotes(response.data.A + response.data.B + response.data.C);
 

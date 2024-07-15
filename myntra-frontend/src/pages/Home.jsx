@@ -31,7 +31,7 @@ const Home = () => {
       const formData = new FormData();
       formData.append('file', file);
 
-      const recommendationsResponse = await axios.post('http://localhost:5001/recommend', formData, {
+      const recommendationsResponse = await axios.post('http://127.0.0.1:5001/recommend', formData, {
         headers: {
           'Content-Type': 'multipart/form-data'
         }
