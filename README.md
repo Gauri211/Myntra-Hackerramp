@@ -29,3 +29,4 @@ An interactive voting system where users can influence and select their favorite
 -	TensorFlow/Keras: Implements deep learning functionalities with the ResNet50 model for image feature extraction.
 
 ## Live Demo
+https://github.com/user-attachments/assets/29deaae8-b4ee-4a88-9dbc-23429b967ab1
