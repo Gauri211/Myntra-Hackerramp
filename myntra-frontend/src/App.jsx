@@ -24,7 +24,7 @@ function App() {
         position="fixed"
         bottom="0"
         width="100%"
-        zIndex="9999" // Ensure the image is on top of other content
+        zIndex="9999" 
         mt={50}
       /> 
       </Box>

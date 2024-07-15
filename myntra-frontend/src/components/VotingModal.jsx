@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 import { useState, useEffect } from 'react';
-import { Box, Button, Image, Text, Modal, ModalOverlay, ModalContent, ModalHeader, ModalBody, ModalCloseButton, Progress } from "@chakra-ui/react";
+import { Box, Button, Image, Text, Modal, ModalOverlay, ModalContent, ModalHeader, ModalBody, ModalCloseButton, Progress, Flex } from "@chakra-ui/react";
 import axios from 'axios';
 import top1 from "../assets/top1.jpeg";
 import top2 from "../assets/top4.jpeg";
@@ -48,9 +48,9 @@ const VotingModal = ({ isOpen, onClose }) => {
   };
 
   const winningOptionImages = {
-    'A': top1, // Assuming top1 is the image for option A
-    'B': top2, // Replace with actual image for option B
-    'C': top3  // Replace with actual image for option C
+    'A': top1, 
+    'B': top2, 
+    'C': top3  
   };
 
   const getPercentage = (count) => (totalVotes > 0 ? (count / totalVotes) * 100 : 0);
@@ -73,7 +73,7 @@ const VotingModal = ({ isOpen, onClose }) => {
               <Box align={"center"}>
               <Image align={"center"} src={winningImage} boxSize="200px" borderRadius="md" mb={5} />
               </Box>
-              <Text className="inknut-antiqua-semibold" fontSize={28} mb={2}>Winner! <FaCrown /></Text>
+              <Flex align="center" justifyContent={"center"}><FaCrown fontSize={30} /><Text className="inknut-antiqua-semibold" fontSize={28} mx={3}>Winner!</Text><FaCrown fontSize={30} /></Flex>
             </Box>
           ) : (
             <Box display="flex" justifyContent="space-between">

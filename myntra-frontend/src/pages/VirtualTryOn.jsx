@@ -17,7 +17,7 @@ const VirtualTryOn = () => {
         <Flex justifyContent={'space-between'} p={2}>
             <HStack spacing={3}>
                 <FaArrowLeft className="icons" onClick={() => navigate("/")}/>
-                <Heading fontSize={'24px'}>Dressberry</Heading>
+                <Heading fontSize={'24px'}>{title}</Heading>
             </HStack>
             <HStack spacing={3}>
                 <GoShareAndroid className="icons"/>
@@ -29,8 +29,6 @@ const VirtualTryOn = () => {
           <ModelViewer title={title}/>
         </Box>
         <Box
-        // mt={2}
-        // bgGradient="linear(to-r, #e0c3fc, #8ec5fc)" // Light purple to pink gradient
         p={4}
         borderRadius="md"
       >

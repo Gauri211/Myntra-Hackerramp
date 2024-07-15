@@ -1,4 +1,4 @@
-import React from 'react';
+/* eslint-disable react/prop-types */
 import { Box, Image } from '@chakra-ui/react';
 import Ses1 from '../assets/Spring.png';
 import Ses2 from '../assets/Summ.png';

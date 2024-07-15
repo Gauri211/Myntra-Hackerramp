@@ -10,7 +10,7 @@ import MultiCardCarousel from '../components/MultiCardCarousel';
 const ProductPage = () => {
   const navigate = useNavigate();
   const location = useLocation();
-  const { title, cardimage, content, price } = location.state || {};
+  const { title, cardimage, price } = location.state || {};
   
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [image, setImage] = useState(null);
@@ -42,7 +42,6 @@ const ProductPage = () => {
       <Flex p={4} mt={2} justifyContent={"space-between"}>
         <Box>
           <Heading size='md'>White Top</Heading>
-          {/* <Text mt={2}>{content || "Product description goes here."}</Text> */}
           <Text mt={2} color='gray.400' fontSize='2xl'>{price ? `$${price}` : "$647"}</Text>
         </Box>
         <Box alignSelf={"center"}>

@@ -4,7 +4,6 @@ import { IoIosNotificationsOutline } from 'react-icons/io';
 import axios from 'axios';
 import voicebg from "../assets/header.jpg";
 import MultiCardCarousel from '../components/MultiCardCarousel';
-import WeatherMultiCard from '../components/WeatherMultiCard';
 import VotingModal from '../components/VotingModal';
 import { useLocation, useNavigate } from "react-router-dom";
 import ChoiceTrendCarousel from "../components/ChoiceTrendCarousel"
@@ -58,9 +57,11 @@ const Home = () => {
         justifyContent="center"
         alignItems="center"
       >
-        <Box position={"absolute"} top={2.5} right={"107px"} fontSize={"30px"} bgColor={"white"}>
-          <IoIosNotificationsOutline onClick={onOpen} />
-        </Box>
+        <Box position={"absolute"} top={2.5} right={"102px"} fontSize={"30px"} bgColor={"white"}>
+          {!newRec ?
+            <Box h={2} w={2} bgColor={"orange"} borderRadius={50} float={"right"} /> : null}
+              <IoIosNotificationsOutline onClick={onOpen} />
+            </Box>
         <Box position={"absolute"} top={0.1} right={"50px"} fontSize={"30px"}>
           <Image src={colorwheel} h={12} w={12} bgColor={"white"} onClick={() => navigate("/analyser")}/>
         </Box>

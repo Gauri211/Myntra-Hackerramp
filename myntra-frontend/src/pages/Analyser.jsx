@@ -61,7 +61,6 @@ const AnalyserPage = () => {
 
   return (
     <Box>
-      {/* Header Image */}
       <Box
         w="100%"
         h="6.5vh"
@@ -80,10 +79,8 @@ const AnalyserPage = () => {
         </Box>
       </Box>
      
-      {/* Content Box */}
       <Box p={5}>
         <Flex justifyContent="space-between" alignItems="center" mb={3}>
-          {/* Left Section (Seasonal Color Analysis) */}
           <Box>
             <HStack ml={-3}>
             <FaArrowLeft className="icons" onClick={() => navigate("/")}/>
@@ -92,7 +89,6 @@ const AnalyserPage = () => {
             
           </Box>
 
-          {/* Right Section (Try On Button) */}
           <Box>
             <Button variant="outline" colorScheme='orange' px={4} onClick={onOpen}>
               Try It!
@@ -100,14 +96,12 @@ const AnalyserPage = () => {
           </Box>
         </Flex>
 
-        {/* Analyser Image Display Section */}
         {showAnalyser && (
           <Box mb={5}>
             <Image src={Analyser} alt="Analyser Image" w="100%" h="auto" />
           </Box>
         )}
 
-        {/* Selected Image Display Section */}
         {image && !showAnalyser && (
           <Box mb={3}>
             <Image src={image} alt="Selected Image" w="100%" h="auto" />
@@ -131,17 +125,17 @@ const AnalyserPage = () => {
             <Box mt={1}>
               <Text fontSize="lg" align={"center"} className='inknut-antiqua-semibold' mb={4}>Curated Color Spectrum Just for You!</Text>
               <Grid
-                templateColumns="repeat(3, 1fr)"  // 3 columns
-                gap={1}  // gap between items
-                maxWidth="300px"  // adjust as needed for mobile view
-                margin="auto"  // center align
+                templateColumns="repeat(3, 1fr)"  
+                gap={1}  
+                maxWidth="300px"  
+                margin="auto"  
               >
                 {hexColors.map((color, index) => (
                   <Box
                     key={index}
                     bg={color}
-                    height="65px"  // adjust height as needed
-                    borderRadius="md"  // rounded corners
+                    height="65px"  
+                    borderRadius="md"  
                   />
                 ))}
               </Grid>
