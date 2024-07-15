@@ -1,4 +1,5 @@
-# Myntra Hackerramp
+# Myntra Hackerramp <img src="https://github.com/user-attachments/assets/3602ef68-4de8-46dd-b8b1-0c23ed087d6e" alt="Myntra_logo" width="50" height="50">
+
 ## 3D Virtual Try On
 ### Overview
 Experience a 3D virtual try-on, viewing yourself in various apparel for a realistic fashion preview.
