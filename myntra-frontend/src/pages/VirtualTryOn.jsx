@@ -6,6 +6,7 @@ import { HiOutlineShoppingBag } from "react-icons/hi2";
 import ModelViewer from "../components/ModelViewer";
 import MultiCardCarousel from "../components/MultiCardCarousel";
 import { useNavigate, useLocation } from "react-router-dom";
+import modalBg from "../assets/plant.jpeg"
 
 const VirtualTryOn = () => {
   const navigate = useNavigate();
@@ -25,8 +26,11 @@ const VirtualTryOn = () => {
                 <HiOutlineShoppingBag className="icons"/>
             </HStack>
         </Flex>
-        <Box h={450} bgColor={'black'}>
+        {/* <Box h={450} bgColor={'black'}>
           <ModelViewer title={title}/>
+        </Box> */}
+        <Box h={450} backgroundImage={modalBg} backgroundSize="cover" backgroundPosition="center">
+          <ModelViewer title={title} />
         </Box>
         <Box
         p={4}

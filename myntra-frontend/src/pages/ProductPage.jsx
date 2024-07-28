@@ -41,7 +41,7 @@ const ProductPage = () => {
       </Box>
       <Flex p={4} mt={2} justifyContent={"space-between"}>
         <Box>
-          <Heading size='md'>White Top</Heading>
+          <Heading size='md'>{title}</Heading>
           <Text mt={2} color='gray.400' fontSize='2xl'>{price ? `$${price}` : "$647"}</Text>
         </Box>
         <Box alignSelf={"center"}>

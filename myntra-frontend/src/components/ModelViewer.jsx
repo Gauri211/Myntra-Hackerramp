@@ -18,7 +18,7 @@ const Model = ({ isMobile, title }) => {
       case "Peach Top":
         return "peachTop";
       default:
-        return "greyTop"; // Default model if title doesn't match
+        return "Output"; // Default model if title doesn't match
     }
   };
 
@@ -41,7 +41,7 @@ const Model = ({ isMobile, title }) => {
       <primitive
         object={computer.scene}
         scale={isMobile ? 2 : 1.5}
-        position={isMobile ? [0, 0, 0] : [0, -1.5, 0]}
+        position={isMobile ? [0, -0.5, 0] : [0, -1.5, 0]}
         rotation={[0, 0, 0]} // Explicitly setting rotation to zero
       />
     </mesh>

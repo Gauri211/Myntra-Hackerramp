@@ -14,6 +14,7 @@ import pandas as pd
 from flask_cors import CORS
 import requests
 import time
+from collections import Counter
 
 app = Flask(__name__)
 CORS(app, origin=["http://localhost:5173"])
@@ -94,7 +95,7 @@ def colorAnalysis():
     response = requests.post('https://54q0p9sw-8000.inc1.devtunnels.ms/analyze', files=request.files)  # Replace with your actual URL
     
     time.sleep(5)
-    
+    print(response)
     if response.status_code != 200:
         return jsonify({"error": "Failed to retrieve color data"}), 500
     
@@ -124,6 +125,22 @@ def colorAnalysis():
     color_data["Links"] = links
 
     return jsonify(color_data) # Return as JSON response
+
+votes = Counter({'A': 0, 'B': 0, 'C': 0})
+
+@app.route('/vote', methods=['POST'])
+def vote():
+    data = request.json
+    option = data.get('option')
+    if option not in votes:
+        return jsonify({"error": "Invalid option"}), 400
+    
+    votes[option] += 1
+    return jsonify({"message": "Vote counted"}), 200
+
+@app.route('/counts', methods=['GET'])
+def get_counts():
+    return jsonify(votes)
 
 if __name__ == '__main__':
     if not os.path.exists('uploads'):
