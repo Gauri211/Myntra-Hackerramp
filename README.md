@@ -1,4 +1,6 @@
-# Myntra Hackerramp <img src="https://github.com/user-attachments/assets/3602ef68-4de8-46dd-b8b1-0c23ed087d6e" alt="Myntra_logo" width="50" height="50">
+# Myntra Hackerramp WeForShe 2024
+![Style_Sync](https://github.com/user-attachments/assets/d621af4a-91af-4cb3-b21c-ccc0be436ee5)
+
 
 ## 3D Virtual Try On
 ### Overview
@@ -28,6 +30,12 @@ An interactive voting system where users can influence and select their favorite
 -	Flask: Manages HTTP requests and responses, providing a robust web framework.
 -	Pandas: Facilitates data manipulation tasks, ensuring efficient handling of datasets.
 -	TensorFlow/Keras: Implements deep learning functionalities with the ResNet50 model for image feature extraction.
+
+## Future Enhancements
+![Screenshot 2024-07-29 235310](https://github.com/user-attachments/assets/95f08ce0-ea6f-4cbd-b6a7-713868f18703)
+
+## Architecture of 3D Virtual Try On
+![Screenshot 2024-07-29 233557](https://github.com/user-attachments/assets/7e70eb8a-aa50-4186-b8de-34f73b56f0c8)
 
 ## Live Demo
 https://github.com/user-attachments/assets/29deaae8-b4ee-4a88-9dbc-23429b967ab1
