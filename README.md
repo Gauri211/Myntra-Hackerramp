@@ -30,7 +30,8 @@ An interactive voting system where users can influence and select their favorite
 -	Flask: Manages HTTP requests and responses, providing a robust web framework.
 -	Pandas: Facilitates data manipulation tasks, ensuring efficient handling of datasets.
 -	TensorFlow/Keras: Implements deep learning functionalities with the ResNet50 model for image feature extraction.
--	### Architecture of 3D Virtual Try On
+
+## Architecture of 3D Virtual Try On
 ![Screenshot 2024-07-29 233557](https://github.com/user-attachments/assets/7e70eb8a-aa50-4186-b8de-34f73b56f0c8)
 
 ## Live Demo
