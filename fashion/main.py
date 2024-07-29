@@ -107,7 +107,7 @@ def colorAnalysis():
     cleaned_recc_list = [color.strip("- ").strip() for color in recc_list]
     print(cleaned_recc_list)
     # Filter styles based on the cleaned_recc_list
-    women_df = df[(df['gender'] == 'Women') & (df['baseColour'].isin(cleaned_recc_list))]
+    women_df = df[(df['gender'] == 'Women') & (df['masterCategory']=='Apparel') & (df['masterCategory'] == 'Accessories') & (df['baseColour'].isin(cleaned_recc_list))]
     print(women_df)
     num_random_ids = 5  # Adjust this number as needed
     random_ids = women_df['id'].sample(n=num_random_ids).tolist()
