@@ -39,3 +39,15 @@ An interactive voting system where users can influence and select their favorite
 
 ## Live Demo
 https://github.com/user-attachments/assets/29deaae8-b4ee-4a88-9dbc-23429b967ab1
+## Reference Links
+https://github.com/thangtran480/hair-segmentation
+
+https://github.com/wildoctopus/huggingface-cloth-segmentation
+
+https://huggingface.co/yolo12138/segformer-b2-human-parse-24
+
+https://github.com/Aviar-org/openpose_example
+
+https://www.kaggle.com/datasets/paramaggarwal/fashion-product-images-dataset
+
+
