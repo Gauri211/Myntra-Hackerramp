@@ -69,7 +69,7 @@ const Home = () => {
       </Box>
       {newRec ? (
         <>
-        <Text my={3} ml={3} className='inknut-antiqua-medium'>Trends</Text>
+        <Text my={3} ml={3} className='inknut-antiqua-medium'>Trends You’ve Unleashed</Text>
         <Box>
           <ChoiceTrendCarousel trend={trend} />
         </Box>

@@ -3,14 +3,14 @@ import 'react-multi-carousel/lib/styles.css';
 import ProductCard from './ProductCard';
 import whiteTop from "../assets/white-top.jpeg"
 import orangeTop from "../assets/orange-top.jpeg"
-import greyTop from "../assets/grey-top.jpeg"
+import pinkTop from "../assets/pinkTop.jpg"
 import blackTop from "../assets/black-top.jpeg"
 import peachTop from "../assets/peach-top.jpeg"
 
 const cards = [
   { id: 1, title: 'White Top', content: 'Content of Card 1', cardimage: whiteTop },
   { id: 2, title: 'Orange Top', content: 'Content of Card 2', cardimage: orangeTop},
-  { id: 3, title: 'Grey Top', content: 'Content of Card 3', cardimage: greyTop },
+  { id: 3, title: 'Pink Top', content: 'Content of Card 3', cardimage: pinkTop },
   { id: 4, title: 'Black Top', content: 'Content of Card 4', cardimage: blackTop },
   { id: 5, title: 'Peach Top', content: 'Content of Card 5', cardimage: peachTop },
   // Add more cards as needed

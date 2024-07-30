@@ -12,7 +12,7 @@ const Model = ({ isMobile, title }) => {
       case "White Top":
         return "whiteTop";
       case "Black Top":
-        return "blackTop";
+        return "pinkTop";
       case "Orange Top":
         return "orangeTop";
       case "Peach Top":
