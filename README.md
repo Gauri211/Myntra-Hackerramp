@@ -1,6 +1,10 @@
 # Myntra Hackerramp WeForShe 2024
 ![Style_Sync](https://github.com/user-attachments/assets/d621af4a-91af-4cb3-b21c-ccc0be436ee5)
 
+## Problem Statement Video 
+https://github.com/user-attachments/assets/761c696e-e5d1-4a31-ada2-365e1efc757a
+
+
 
 ## 3D Virtual Try On
 ### Overview
