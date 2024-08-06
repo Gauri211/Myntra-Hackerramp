@@ -92,7 +92,7 @@ def final_output():
 @app.route('/colorrec', methods=['POST'])
 def colorAnalysis():
     # Make a request to the external API
-    response = requests.post('https://54q0p9sw-8000.inc1.devtunnels.ms/analyze', files=request.files)  # Replace with your actual URL
+    response = requests.post('https://localhost:5000/analyze', files=request.files)  # Replace with your actual URL
     
     time.sleep(5)
     print(response)
